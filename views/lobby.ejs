@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="web/css/lobby.css">
+    <title>Lobby</title>
+</head>
+<body>
+    <div class="box">
+        <header>
+            <h2 class="title">Bem vindo ao lobby: <%= name %></h2>
+        </header>
+        <main id="chat">
+            <% chat.forEach(e => { %>
+                <h4><%= e.user.name || "undefinedUser" %>: <%= e.text %></h4>    
+            <% }) %> 
+        </main>
+        <footer>
+            <input type="text" id="menssage">
+            <input type="submit" value="Enviar mensagem" id="menssageButton">
+        </footer>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.3.2/socket.io.js"></script>
+    <script src="web/js/socketClient.js"></script>
+</body>
+</html>
